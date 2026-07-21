@@ -75,7 +75,7 @@ function Hero() {
         <div className='h-[80vh] flex flex-col justify-center'>
             <div>
                 <label
-                    className='flex justify-center hover:border hover:border-blue-500 duration-300 items-center gap-2 cursor-pointer h-[15vh] w-[30vw] p-5 bg-neutral-100 rounded-lg'
+                    className='flex justify-center hover:border hover:border-blue-500 duration-300 items-center gap-2 cursor-pointer h-[15vh] w-fit text-black md:w-[30vw] p-5 bg-neutral-100 rounded-lg'
                     htmlFor="file">
                     {
                         pdfFile ? <div className='flex items-center gap-2'>
@@ -84,7 +84,7 @@ function Hero() {
                         </div> : (
                             <div className='flex items-center text-xl gap-2 '>
                                 <FaFileWord className='text-blue-500 text-xl' />
-                                <p>Word və ya PDF yüklə</p>
+                                <p>Word faylı yüklə</p>
                             </div>
                         )
                     }
@@ -93,7 +93,7 @@ function Hero() {
                     id='file'
                     className='hidden'
                     type="file"
-                    accept='.docx,.pdf'
+                    accept='.docx'
                     onChange={handleChangeFile}
                 />
             </div>

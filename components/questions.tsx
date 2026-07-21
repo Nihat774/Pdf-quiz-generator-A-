@@ -111,7 +111,7 @@ function Questions() {
   if (questions.length === 0) {
     return (
       <div className="text-center py-10">
-        <h2 className="text-2xl font-semibold">
+        <h2 className="text-xl md:text-2xl font-semibold">
           Hələ heç bir sual yaradılmayıb.
         </h2>
       </div>
