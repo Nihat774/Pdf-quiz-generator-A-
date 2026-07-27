@@ -80,18 +80,18 @@ function Hero() {
         <div className="min-h-[80vh] w-full flex flex-col items-center justify-center px-4 py-16">
             <div className="exam-sheet relative w-full max-w-xl bg-[#FBF7EC] border border-[#22201B]/15 shadow-[6px_6px_0_0_rgba(34,32,27,0.12)] p-8 md:p-10">
                 <div className="flex items-center justify-between mb-8 border-b border-dashed border-[#22201B]/30 pb-4">
-                    <p className="font-[family-name:var(--font-mono)] text-xs tracking-[0.25em] uppercase text-[#726B5E]">
+                    <p className="font-mono text-xs tracking-[0.25em] uppercase text-[#726B5E]">
                         Test Generator
                     </p>
-                    <p className="font-[family-name:var(--font-mono)] text-xs tracking-[0.25em] uppercase text-[#726B5E]">
+                    <p className="font-mono text-xs tracking-[0.25em] uppercase text-[#726B5E]">
                         Form A
                     </p>
                 </div>
 
-                <h1 className="font-[family-name:var(--font-display)] text-2xl md:text-3xl text-[#22201B] mb-2 leading-snug">
+                <h1 className="font-[--font-display] text-2xl md:text-3xl text-[#22201B] mb-2 leading-snug">
                     Sənədini imtahana çevir
                 </h1>
-                <p className="font-[family-name:var(--font-body)] text-[#726B5E] mb-8 text-sm md:text-base">
+                <p className="font-[--font-body] text-[#726B5E] mb-8 text-sm md:text-base">
                     Word faylını yüklə, sual sayını seç, qalanını biz edək.
                 </p>
 
@@ -101,11 +101,11 @@ function Hero() {
                 >
                     <FaFileWord className="text-[#B23A2E] text-2xl shrink-0" />
                     {pdfFile ? (
-                        <p className="font-[family-name:var(--font-mono)] text-sm text-[#22201B] truncate">
+                        <p className="font-mono text-sm text-[#22201B] truncate">
                             {pdfFile.name}
                         </p>
                     ) : (
-                        <div className="font-[family-name:var(--font-body)]">
+                        <div className="font-[--font-body]">
                             <p className="text-[#22201B]">Word faylı yüklə</p>
                             <p className="text-xs text-[#726B5E] mt-1">.docx faylını bura sürüklə və ya seç</p>
                         </div>
@@ -122,7 +122,7 @@ function Hero() {
                 {text.length !== 0 && (
                     <div className="mt-10 flex flex-col items-center gap-6">
                         <div className="flex flex-col items-center gap-3 w-full">
-                            <p className="font-[family-name:var(--font-mono)] text-xs tracking-[0.2em] uppercase text-[#726B5E]">
+                            <p className="font-mono text-xs tracking-[0.2em] uppercase text-[#726B5E]">
                                 Sual sayı
                             </p>
                             <div className="flex gap-4">
@@ -143,7 +143,7 @@ function Hero() {
                         <button
                             disabled={loading || text.length === 0}
                             onClick={handleCreate}
-                            className="w-full md:w-auto md:px-10 py-3 bg-[#B23A2E] hover:bg-[#963026] disabled:opacity-50 disabled:cursor-not-allowed text-[#FBF7EC] font-[family-name:var(--font-mono)] text-sm tracking-[0.15em] uppercase transition-colors duration-300"
+                            className="w-full md:w-auto md:px-10 py-3 bg-[#B23A2E] hover:bg-[#963026] disabled:opacity-50 disabled:cursor-not-allowed text-[#FBF7mono text-sm tracking-[0.15em] uppercase transition-colors duration-300"
                         >
                             {loading ? "Hazırlanır..." : "Sualları hazırla"}
                         </button>
@@ -152,10 +152,10 @@ function Hero() {
 
                 {error && (
                     <div className="mt-6 border-l-4 border-[#B23A2E] bg-[#B23A2E]/5 px-4 py-3">
-                        <p className="font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.15em] text-[#B23A2E] mb-1">
+                        <p className="font-mono text-xs uppercase tracking-[0.15em] text-[#B23A2E] mb-1">
                             Xəta
                         </p>
-                        <p className="font-[family-name:var(--font-body)] text-sm text-[#22201B]">{error}</p>
+                        <p className="font-[--font-body] text-sm text-[#22201B]">{error}</p>
                     </div>
                 )}
             </div>
