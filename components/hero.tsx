@@ -8,7 +8,7 @@ function Hero() {
     const [text, setText] = useState("")
     const [loading, setLoading] = useState(false);
     const [selectedNumber, setSelectedNumber] = useState<number>(10)
-
+    const [error,setError] = useState("");
     const handleChangeFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
         if (file) {
@@ -51,8 +51,10 @@ function Hero() {
     const data = await res.json();
 
     if (!res.ok) {
-      console.log(data); // Backend xətasını göstər
-      console.log(data.error);
+      console.log(data); 
+     setError(
+  "Suallar hazırlanarkən xəta baş verdi. Zəhmət olmasa bir neçə dəqiqə sonra yenidən cəhd edin."
+);
       return;
     }
 
@@ -72,7 +74,7 @@ function Hero() {
   }
 };
     return (
-        <div className='h-[80vh] flex flex-col justify-center'>
+        <div className='h-[80vh] flex flex-col items-center justify-center'>
             <div>
                 <label
                     className='flex justify-center hover:border hover:border-blue-500 duration-300 items-center gap-2 cursor-pointer h-[15vh] w-fit text-black md:w-[30vw] p-5 bg-neutral-100 rounded-lg'
@@ -110,7 +112,7 @@ function Hero() {
                         </div>
                         <button disabled={loading || text.length == 0}
                             onClick={handleCreate}
-                            className={`bg-sky-500 hover:bg-sky-400  w-[15vw] duration-300 px-5 cursor-pointer rounded-lg py-3 text-white`}>
+                            className={`bg-sky-500 hover:bg-sky-400 w-fit md:w-[15vw] duration-300 px-5 cursor-pointer rounded-lg py-3 text-white`}>
                             {loading ?
                                 (
                                     <div>
@@ -125,6 +127,12 @@ function Hero() {
                     </div>
                 )
             }
+
+            {error && (
+  <div className="mt-4 w-full rounded-lg border border-red-300 bg-red-50 p-4 text-red-700">
+    {error}
+  </div>
+)}
 
         </div>
     )

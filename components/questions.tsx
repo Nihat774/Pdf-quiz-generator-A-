@@ -137,7 +137,7 @@ function Questions() {
         ) : (
           <div>
             <div className="flex justify-between pb-5 items-center">
-              <h1 className="text-3xl font-bold">
+              <h1 className="text-xl md:text-3xl font-bold">
                 Hazırlanmış Suallar
               </h1>
 
